@@ -1,0 +1,14 @@
+my_int = int(input('Give me an int >= 0: '))
+og_int = my_int
+# Fill in the missing code
+binlist=[]
+if my_int == 0:
+    bstr = 0
+else:
+    while og_int > 0:
+        bin_nr = og_int % 2
+        binlist.append(str(bin_nr))
+        og_int = og_int // 2
+    astr = "".join(binlist)
+    bstr = astr[::-1]
+print("The binary of", my_int, "is", bstr)
