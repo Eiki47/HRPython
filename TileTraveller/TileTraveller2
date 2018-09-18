@@ -19,3 +19,21 @@ def possib(x,y):
     if player_tile_x == 3 and player_tile_y == 2: possibilites = tile32
     if player_tile_x == 3 and player_tile_y == 3: possibilites = tile33
     return possibilites
+
+def directions(dir, x, y):
+    if (dir == "N" or dir == "n") and "(N)orth" in possib(x, y):
+        y += 1
+        validation = True
+    elif (dir == "E" or dir == "e") and "(E)ast" in possib(x, y):
+        x += 1
+        validation = True
+    elif (dir == "S" or dir == "s") and "(S)outh" in possib(x, y):
+        y -= 1
+        validation = True
+    elif (dir == "W" or dir == "w") and "(W)est" in possib(x, y):
+        x -= 1
+        validation = True
+    else:
+        print ("Not a valid direction!")
+        validation = False
+    return x,y, validation
