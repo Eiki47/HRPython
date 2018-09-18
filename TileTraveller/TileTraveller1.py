@@ -1,14 +1,14 @@
 #Forritið keyrist á while loopu alveg upp að þeim tímapunkti þegar notandi vinnur leikinn á reit 3,1.
 #Við látum öll tile-in í sér breytur sem inniheldur sérhverja átt fyrir þann reit.
 
-tile11 = "N"
-tile12 = "NES"
-tile13 = "SE"
-tile21 = "N"
-tile22 = "SW"
-tile23 = "EW"
-tile32 = "NS"
-tile33 = "SW"
+tile11 = "(N)orth"
+tile12 = "(N)orth or (E)ast or (S)outh"
+tile13 = "(S)outh or (E)ast"
+tile21 = "(N)orth"
+tile22 = "(S)outh or (W)est"
+tile23 = "(E)ast or (W)est"
+tile32 = "(N)orth or (S)outh"
+tile33 = "(S)outh or (W)west"
 
 player_tile_x=1
 player_tile_y=1
