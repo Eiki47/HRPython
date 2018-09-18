@@ -27,3 +27,18 @@ while victory == False:
     if player_tile_x == 3 and player_tile_y == 3: possibilites = tile33
     print ("You can travel: ", possibilites)
     direc = str(input("Direction: "))
+
+    if direc == "N" and "(N)orth" in possibilites:
+        player_tile_y += 1
+        victory = False
+    elif direc == "E" and "(E)ast" in possibilites:
+        player_tile_x+=1
+        victory = False
+    elif direc == "S" and "(S)outh" in possibilites:
+        player_tile_y -= 1
+        victory = False
+    elif direc == "W" and "(W)est" in possibilites:
+        player_tile_x -= 1
+        victory = False
+    else:
+        victory = False
