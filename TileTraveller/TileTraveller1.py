@@ -12,3 +12,7 @@ tile33 = "SW"
 
 player_tile_x=1
 player_tile_y=1
+
+victory = False
+while victory == False:
+    
