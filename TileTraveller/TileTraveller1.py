@@ -9,3 +9,6 @@ tile22 = "SW"
 tile23 = "EW"
 tile32 = "NS"
 tile33 = "SW"
+
+player_tile_x=1
+player_tile_y=1
