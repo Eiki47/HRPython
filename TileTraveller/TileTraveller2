@@ -37,3 +37,8 @@ def directions(dir, x, y):
         print ("Not a valid direction!")
         validation = False
     return x,y, validation
+
+def victoryCheck(x,y):
+    if x == 3 and y == 1:
+        print("Victory!")
+        return True
