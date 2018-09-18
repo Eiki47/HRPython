@@ -34,16 +34,11 @@ while victory == False:
 
         if (direc == "N" or direc == "n") and "(N)orth" in possibilites:
             player_tile_y += 1
-            victory = False
         elif (direc == "E" or direc == "e") and "(E)ast" in possibilites:
             player_tile_x+=1
-            victory = False
         elif (direc == "S" or direc == "s") and "(S)outh" in possibilites:
             player_tile_y -= 1
-            victory = False
         elif (direc == "W" or direc == "w") and "(W)est" in possibilites:
             player_tile_x -= 1
-            victory = False
         else:
             print ("Not a valid direction!")
-            victory = False
