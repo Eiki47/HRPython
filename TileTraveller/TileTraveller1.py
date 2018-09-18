@@ -25,3 +25,5 @@ while victory == False:
     if player_tile_x == 2 and player_tile_y == 3: possibilites = tile23
     if player_tile_x == 3 and player_tile_y == 2: possibilites = tile32
     if player_tile_x == 3 and player_tile_y == 3: possibilites = tile33
+    print ("You can travel: ", possibilites)
+    direc = str(input("Direction: "))
