@@ -28,17 +28,18 @@ while victory == False:
     print ("You can travel: ", possibilites)
     direc = str(input("Direction: "))
 
-    if direc == "N" and "(N)orth" in possibilites:
+    if (direc == "N" or direc == "n") and "(N)orth" in possibilites:
         player_tile_y += 1
         victory = False
-    elif direc == "E" and "(E)ast" in possibilites:
+    elif (direc == "E" or direc == "e") and "(E)ast" in possibilites:
         player_tile_x+=1
         victory = False
-    elif direc == "S" and "(S)outh" in possibilites:
+    elif (direc == "S" or direc == "s") and "(S)outh" in possibilites:
         player_tile_y -= 1
         victory = False
-    elif direc == "W" and "(W)est" in possibilites:
+    elif (direc == "W" or direc == "w") and "(W)est" in possibilites:
         player_tile_x -= 1
         victory = False
     else:
+        print ("Not a valid direction!")
         victory = False
