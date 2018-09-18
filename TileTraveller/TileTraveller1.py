@@ -16,30 +16,34 @@ player_tile_y=1
 possibilites = ""
 
 victory = False
-while victory == False:   
-    if player_tile_x == 1 and player_tile_y == 1: possibilites = tile11
-    if player_tile_x == 1 and player_tile_y == 2: possibilites = tile12
-    if player_tile_x == 1 and player_tile_y == 3: possibilites = tile13
-    if player_tile_x == 2 and player_tile_y == 1: possibilites = tile21
-    if player_tile_x == 2 and player_tile_y == 2: possibilites = tile22
-    if player_tile_x == 2 and player_tile_y == 3: possibilites = tile23
-    if player_tile_x == 3 and player_tile_y == 2: possibilites = tile32
-    if player_tile_x == 3 and player_tile_y == 3: possibilites = tile33
-    print ("You can travel: ", possibilites)
-    direc = str(input("Direction: "))
-
-    if (direc == "N" or direc == "n") and "(N)orth" in possibilites:
-        player_tile_y += 1
-        victory = False
-    elif (direc == "E" or direc == "e") and "(E)ast" in possibilites:
-        player_tile_x+=1
-        victory = False
-    elif (direc == "S" or direc == "s") and "(S)outh" in possibilites:
-        player_tile_y -= 1
-        victory = False
-    elif (direc == "W" or direc == "w") and "(W)est" in possibilites:
-        player_tile_x -= 1
-        victory = False
+while victory == False:
+    if player_tile_x == 3 and player_tile_y == 1:
+        print("Victory!")
+        victory = True
     else:
-        print ("Not a valid direction!")
-        victory = False
+        if player_tile_x == 1 and player_tile_y == 1: possibilites = tile11
+        if player_tile_x == 1 and player_tile_y == 2: possibilites = tile12
+        if player_tile_x == 1 and player_tile_y == 3: possibilites = tile13
+        if player_tile_x == 2 and player_tile_y == 1: possibilites = tile21
+        if player_tile_x == 2 and player_tile_y == 2: possibilites = tile22
+        if player_tile_x == 2 and player_tile_y == 3: possibilites = tile23
+        if player_tile_x == 3 and player_tile_y == 2: possibilites = tile32
+        if player_tile_x == 3 and player_tile_y == 3: possibilites = tile33
+        print ("You can travel: ", possibilites)
+        direc = str(input("Direction: "))
+
+        if (direc == "N" or direc == "n") and "(N)orth" in possibilites:
+            player_tile_y += 1
+            victory = False
+        elif (direc == "E" or direc == "e") and "(E)ast" in possibilites:
+            player_tile_x+=1
+            victory = False
+        elif (direc == "S" or direc == "s") and "(S)outh" in possibilites:
+            player_tile_y -= 1
+            victory = False
+        elif (direc == "W" or direc == "w") and "(W)est" in possibilites:
+            player_tile_x -= 1
+            victory = False
+        else:
+            print ("Not a valid direction!")
+            victory = False
