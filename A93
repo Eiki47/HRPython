@@ -1,0 +1,10 @@
+with open("words.txt", "r") as rf:
+    longest=""
+    length=0
+    for line in rf:
+        new = line.replace("\n", "")
+        if len(new) >= len(longest):
+            longest = new
+            length = len(new)
+
+    print ("Longest word is '" + longest + "' of length", length)
