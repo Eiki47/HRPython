@@ -1,0 +1,15 @@
+count=0
+with open('words.txt', 'r') as rf:
+    for line in rf:
+        new_line = line.replace("\n", "")
+        if count != 8:
+            if new_line != "":
+                newer_line = (new_line + " ")
+                with open("sentences.txt", 'a') as sent:
+                    sent.write(newer_line)
+                print(newer_line, end="")
+            if new_line == ".":
+                print("")
+                with open("sentences.txt", 'a') as sent:
+                    sent.write("")
+                count+=1
