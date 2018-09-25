@@ -1,0 +1,21 @@
+# Your functions should appear here
+def populate_list(list):
+    while True:
+        val = input("Enter value to be added to list: ")
+        if val.lower() == "exit":
+            break
+        else:
+            list.append(val)
+    else:
+        return list
+
+def triple_list(list):
+    return list*3
+
+# Main program starts here - DO NOT change it.
+initial_list = []
+populate_list(initial_list)
+new_list = triple_list(initial_list)
+
+for items in new_list:
+    print(items)
