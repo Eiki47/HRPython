@@ -1,0 +1,22 @@
+def get_emails():
+    email_list=[]
+    while True:
+        email = str(input("Email address: "))
+        if email == "q":
+            return email_list
+        else:
+            email_list.append(email)
+
+def get_names_and_domains(a_list):
+    new_list=[]
+    for email in a_list:
+        (x,y) = email.split("@")
+        new_list.append((x,y))
+    return new_list
+
+# Main program starts here - DO NOT change it
+
+email_list = get_emails()
+print(email_list)
+names_and_domains = get_names_and_domains(email_list)
+print(names_and_domains)
