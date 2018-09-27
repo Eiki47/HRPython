@@ -1,0 +1,14 @@
+# list_to_tuple function goes here
+def list_to_tuple(a_list):
+    temp_list=[]
+    for number in a_list:
+        if number.isdigit():
+            temp_list.append(int(number))
+        else:
+            print ("Error. Please enter only integers.")
+            return "()"
+    return tuple(temp_list)
+# Main program starts here - DO NOT change it
+a_list = input("Enter elements of list separated by commas: ").strip().split(',')
+a_tuple = list_to_tuple(a_list)
+print(a_tuple)
