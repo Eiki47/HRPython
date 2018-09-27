@@ -10,8 +10,8 @@ def get_emails():
 def get_names_and_domains(a_list):
     new_list=[]
     for email in a_list:
-        (x,y) = email.split("@")
-        new_list.append((x,y))
+        (name,url) = email.split("@")
+        new_list.append((name,url))
     return new_list
 
 # Main program starts here - DO NOT change it
