@@ -1,0 +1,10 @@
+def get_list():
+    a_list = input("Enter elements of list separated by commas: ").strip().split(',')
+    return a_list
+
+def even_sum(a_list):
+    new_list = [int(number) for number in a_list if int(number) % 2 == 0]
+    return sum(new_list)
+# Main program starts here - DO NOT change it
+a_list = get_list()
+print(even_sum(a_list))
