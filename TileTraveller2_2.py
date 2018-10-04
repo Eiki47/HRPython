@@ -84,43 +84,46 @@ def lever_choice(coins):
         print ("Not a valid input!")
         return 0
 
-def play():
-    restart = str(input("Play again (y/n): "))
-    if restart == "y" or restart == "Y":
-        return True
-    else:
-        return False
-
 # The main program starts here
-victory = False
-row = 1
-col = 1
-lever = False
-coins = 0
+def play():
+    victory = False
+    row = 1
+    col = 1
+    lever = False
+    coins = 0
 
-valid_directions = NORTH
-print_directions(valid_directions)
+    valid_directions = NORTH
+    print_directions(valid_directions)
 
-while not victory:
-    direction = input("Direction: ")
-    direction = direction.lower()
+    while not victory:
+        direction = input("Direction: ")
+        direction = direction.lower()
 
-    if not direction in valid_directions:
-        print("Not a valid direction!")
-    else:
-        col, row = move(direction, col, row)
-        victory = is_victory(col, row)
-        if victory:
-            print("Victory!")
-            if play():
-                row = 1
-                col = 1
-                coins = 0
-                valid_directions = NORTH
-                print_directions(valid_directions)
-                victory = False
+        if not direction in valid_directions:
+            print("Not a valid direction!")
         else:
-            if check_for_lever(col, row):
-                coins += lever_choice(coins)
-            valid_directions = find_directions(col, row)
-            print_directions(valid_directions)
+            col, row = move(direction, col, row)
+            victory = is_victory(col, row)
+            if victory:
+                print("Victory!")
+                restart = str(input("Play again (y/n): "))
+                if restart == "y" or restart == "Y":
+                    return True
+                else:
+                    return False
+            else:
+                if check_for_lever(col, row):
+                    coins += lever_choice(coins)
+                valid_directions = find_directions(col, row)
+                print_directions(valid_directions)
+
+def main():
+    is_playing = True
+    while is_playing:
+        play()
+        if play() == True:
+            is_playing = True
+        else:
+            is_playing = False
+
+main()
