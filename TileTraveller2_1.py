@@ -84,13 +84,6 @@ def lever_choice(coins):
         print ("Not a valid input!")
         return 0
 
-def play():
-    restart = str(input("Play again (y/n): "))
-    if restart == "y" or restart == "Y":
-        return True
-    else:
-        return False
-
 # The main program starts here
 victory = False
 row = 1
@@ -112,13 +105,6 @@ while not victory:
         victory = is_victory(col, row)
         if victory:
             print("Victory!")
-            if play():
-                row = 1
-                col = 1
-                coins = 0
-                valid_directions = NORTH
-                print_directions(valid_directions)
-                victory = False
         else:
             if check_for_lever(col, row):
                 coins += lever_choice(coins)
